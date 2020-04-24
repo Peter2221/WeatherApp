@@ -20,7 +20,7 @@ class App extends Component{
   }
 
   componentDidMount(){
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${this.defalutLocation}&appid=${this.apiKey}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.defalutLocation}&appid=${this.apiKey}`)
       .then(res => {
         this.setState({
           ...this.state,
@@ -34,7 +34,7 @@ class App extends Component{
   }
 
   getData = (city) => {
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.apiKey}`)
       .then(res => {
         this.setState({
           ...this.state,
