@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Header() {
+const Header = () => {
     return (
         <header style={headerStyle}>
             <h1> Weather App </h1>

@@ -1,37 +1,41 @@
-import React, { Component } from 'react'
+import React, { useState, useContext } from 'react'
+import WeatherContext from '../context/weather/weatherContext'
 
-class WeatherSearch extends Component{
+const WeatherSearch = () => {
+    const weatherContext = useContext(WeatherContext);
 
-    submitForm = (e) => {
+    const [city, setCity] = useState('');
+
+    const submitForm = (e) => {
         e.preventDefault();
-        var value = document.getElementById('text-input').value;
-        this.props.getData(value);
-        document.getElementById('text-input').value = '';
+        weatherContext.getData(city);
+        setCity('');
     }
 
-    render(){
-        return (
-            <form style={formStyle} onSubmit={this.submitForm}>
-                <input 
-                    id="text-input"
-                    type="text" 
-                    placeholder="Input city"
-                    className="city-input"
-                />
-                <input 
-                    type="submit" 
-                    value="Submit"
-                    className="btn-submit" 
-                />
-            </form>
-        )
-    }   
+    const onChange = (e) => setCity(e.target.value);
+
+    return (
+        <form style={formStyle} onSubmit={submitForm}>
+            <input 
+                type="text"
+                name="city" 
+                placeholder="Input city"
+                value={city}
+                onChange={onChange}
+                className="city-input"
+            />
+            <input 
+                type="submit" 
+                value="Submit"
+                className="btn-submit" 
+            />
+        </form>
+    )
+  
 }
 
 const formStyle = {
     display: 'flex'
 }
-
-
 
 export default WeatherSearch;

@@ -1,14 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-// Data Format
-// "temp": 281.52,
-// "feels_like": 278.99,
-// "temp_min": 280.15,
-// "temp_max": 283.71,
-// "pressure": 1016,
-// "humidity": 93
-
-function MainData({main}) {
+const MainData = ({ main }) => {
     return (
         <div className="data-box">
             <h2> Main Data </h2>
@@ -42,6 +35,10 @@ function MainData({main}) {
             </ul>
         </div>
     )
+}
+
+MainData.propTypes = {
+    main: PropTypes.object.isRequired
 }
 
 export default MainData;

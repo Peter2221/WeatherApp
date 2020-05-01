@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Wind({wind}) {
+const Wind = ({ wind }) => {
     return (
         <div className="data-box">
             <h2> Wind </h2>
@@ -16,6 +17,10 @@ function Wind({wind}) {
             </ul>
         </div>
     )
+}
+
+Wind.propTypes = {
+    wind: PropTypes.object.isRequired,
 }
 
 export default Wind;

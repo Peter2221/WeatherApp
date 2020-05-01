@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Info({ weather }) {
+const Info = ({ weather }) => {
+
     const data = weather[0];
-    console.log(data);
+
     return (
         <div className="data-box">
             <h2> Weather info </h2>
@@ -18,6 +20,10 @@ function Info({ weather }) {
             </ul>
         </div>
     )
+}
+
+Info.propTypes = {
+    weather: PropTypes.array.isRequired
 }
 
 export default Info;

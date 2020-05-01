@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Loader() {
+const Loader = () => {
     return (
         <div className="loader">
             <p> Please wait...</p>
         </div>
     )
 }
+
+export default Loader;
